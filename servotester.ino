@@ -4,33 +4,36 @@ int pos = 0;
 
 void setup()
 {
-  
   Serial.begin(9600);
-  while (!Serial);
+  while (!Serial);  // wait until serial connects
   myservo.attach(9);
+  
   Serial.println("calibrate servo pretest ...");
-  for(pos = 0; pos <= 180; pos += 1)
+  
+  for(pos = 0; pos <= 180; pos++)
   {
     myservo.write(pos);
     delay(15);
   }
   Serial.println("servo traversed ... ");
+  
   myservo.write(0);
   delay(2000);
-  Serial.print("\n Please enter an angle between 0 and 180: ");
 }
 
 void loop()
 {
   if (Seral.available() > 0)
   {
+    Serial.print("\n Please enter an angle between 0 and 180: ");
     int state = Serial.parseInt();
+    
     Serial.print("turning servo to ");
     Serial.print(state);
     Serial.println(" degrees");
+    
     delay(100);
     myservo.write(state);
-    Serial.print("\n Please enter an angle between 0 and 180: ");
    }
 }
 
