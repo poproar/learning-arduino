@@ -217,30 +217,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
- leftMotor.attach(left);
-  rightMotor.attach(right);
-
-  pinMode(button, INPUT);
-  pinMode(buzzer, OUTPUT);
-  pinMode(led, OUTPUT);
-
-
-  //done 04.05.2019 for sensor
-  Serial.begin(9600);
-  pinMode(trig, OUTPUT);
-  pinMode(echo, INPUT);
-  Serial.println("Hello all!");
-  // int count;
-  // count==1;      // == (2=) is comparison = (1=) is set. this line reads as FALSE 
-  // int count = 1; // might be what you are looking for but will NOT carry over to loop
-                    // to carry into loop use this in the main (first) file with the other
-                    // variables
-  while(digitalRead(button)!= LOW)
-  {
-    // wait til button pressed
-    continue;
-  }
-  bleep(2, 500);
-  bleep(1, 1000, 880);
+  test1();
+  // test2();
 }
